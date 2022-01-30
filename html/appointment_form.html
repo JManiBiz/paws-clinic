@@ -6,74 +6,96 @@
 </head>
 <main>
   <body>
-    <form
-      action="SEND ADDRESS"
-      id="ft-form"
-      method="POST"
-      accept-charset="UTF-8"
-    >
-      <fieldset>
-        <legend>For person</legend>
-        <label>
-          Name
-          <input type="text" name="name" required />
-        </label>
-        <div class="two-cols">
-          <label>
-            Email address
-            <input type="email" name="email" required />
-          </label>
-          <label>
-            Phone number
-            <input type="tel" name="phone" />
-          </label>
-        </div>
-      </fieldset>
-      <fieldset>
-        <legend>Appointment request</legend>
-        <div class="two-cols">
-          <label>
-            Datum
-            <input type="date" name="Appointment request" required />
-          </label>
-          <div class="inline">
-            <label>
-              <input type="hidden" name="Morning desired" value="no" />
-              <input type="checkbox" name="Morning desired" value="yes" />
-              Morning
-            </label>
-            <label>
-              <input type="hidden" name="Afternoon desired" value="no" />
-              <input type="checkbox" name="Afternoon desired" value="yes" />
-              Afternoon
-            </label>
+    <section class="form-section">
+      <form
+        action="SEND ADDRESS"
+        class="appt-form"
+        method="POST"
+        accept-charset="UTF-8"
+      >
+        <h1>Vet Appointment Form</h1>
+        <fieldset>
+          <legend>Owner's Information</legend>
+          <div class="two-cols">
+            <label for="fullname">Owner's Name</label>
+            <br />
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              placeholder="e.g. Jane Doe"
+              required
+            />
+            <br />
+            <label for="contact">Contact Number</label>
+            <br />
+            <input
+              type="tel"
+              id="contact"
+              name="contact"
+              placeholder="xxx-xxx-xxxx"
+              maxlength="12"
+              required
+            />
+            <br />
           </div>
-        </div>
-        <p>Confirmation requested by</p>
-        <div class="inline">
-          <label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Pet's Information</legend>
+          <div class="two-cols">
+            <label for="petname">Pet's Name</label>
+            <br />
+            <input type="text" id="petname" name="petname" required />
+            <br />
+            <label for="dob">Date of Birth</label>
+            <br />
+            <input type="date" id="dob" name="dob" <br />
+          </div>
+          <div class="three-cols">
+            <label for="type">Type of Animal</label>
+            <br />
             <input
-              type="radio"
-              name="Confirmation requested by"
-              value="email"
-              checked
+              type="text"
+              id="type"
+              name="type"
+              spellcheck="true"
+              required
             />
-            Email
-          </label>
-          <label>
+            <br />
+            <label for="breed">Breed of Animal</label>
+            <br />
+            <input type="text" id="breed" name="breed" <br />
+            <p class="gender-heading">Gender</p>
+            <input type="radio" id="female" name="gender" value="female" />
+            <label for="female">Female</label>
+            <input type="radio" id="male" name="gender" value="male" />
+            <label for="male">Male</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Appointment Information</legend>
+          <label for="reason">Reason for Visit</label>
+          <br />
+          <textarea id="reason" name="reason" rows="5" cols="33"></textarea>
+          <div class="two-cols">
+            <small>Office hours are 8am to 6pm, Monday to Saturday</small>
+            <br />
+            <label for="appt-date">Date</label>
+            <input type="date" id="appt-date" name="appt-date" required <br />
+            <label for="appt-time">Time</label>
             <input
-              type="radio"
-              name="Confirmation requested by"
-              value="phone"
+              type="time"
+              id="appt-time"
+              name="appt-time"
+              value="00:00"
+              required
             />
-            Phone call
-          </label>
-        </div>
-      </fieldset>
-      <div class="btns">
-        <input type="text" name="_gotcha" value="" style="display: none" />
-        <input type="submit" value="Submit request" />
-      </div>
-    </form>
+            <br />
+          </div>
+        </fieldset>
+        <input type="submit" value="Book an Appointment" />
+      </form>
+    </section>
   </body>
 </main>
